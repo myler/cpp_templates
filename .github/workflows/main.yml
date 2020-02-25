@@ -1,0 +1,17 @@
+name: CI
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-18.04
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: build examples
+      run: |
+        rm -rf build && mkdir build && cd build
+        cmake ..
+    - name: run examples
+      run: ctest --verbose
