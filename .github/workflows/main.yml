@@ -13,5 +13,6 @@ jobs:
       run: |
         rm -rf build && mkdir build && cd build
         cmake ..
+        make
     - name: run examples
       run: ctest --verbose
